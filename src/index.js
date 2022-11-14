@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AppointmentsList from './components/appointments-list';
+import NewDoctorForm from './components/new-doctor-form';
+import DoctorsList from './components/doctors-list';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -7,7 +11,14 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+        <Routes>
+          <Route exact path="/" element={<App />} />
+          <Route exact path="/doctors" element={<DoctorsList />} />
+          <Route exact path="/appointments" element={<AppointmentsList />} />
+          <Route exact path="/add-new-doctor" element={<NewDoctorForm />} />
+        </Routes>
+      </Router>
   </React.StrictMode>,
 );
 
