@@ -3,7 +3,7 @@ import Navigation from './components/navigation';
 
 function App() {
   return (
-    <div>
+    <div className="container-fluid">
       <Navigation />
     </div>
   );

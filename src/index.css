@@ -25,3 +25,8 @@ code {
     'Courier New',
     monospace;
 }
+
+
+.nav-test {
+  border: red 2px solid;
+}
