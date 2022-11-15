@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../../images/logo.png';
 import closeIcon from '../../images/close-icon.svg';
 import humburgerMenu from '../../images/humburger-menu.svg';
 import './navigation.css';
 
 function Navigation() {
-  const [navState, setNavState] = useState('flex');
-  const [menuState, setMenuState] = useState('hidden');
+  const [navState, setNavState] = useState('hidden');
+  const [menuState, setMenuState] = useState('close');
 
   const close = () => {
     setNavState(() => {
@@ -34,12 +34,18 @@ function Navigation() {
           <img src={closeIcon} alt="Close Icon" />
         </button>
 
-        <Link className="nav-bar-logo" to="/">
+        <NavLink className="nav-bar-logo" to="/">
           <img src={logo} alt="logo" />
-        </Link>
-        <Link className="nav-bar-item nav-item-current" to="/doctors">Doctors</Link>
-        <Link className="nav-bar-item" to="/appointments">Appointments</Link>
-        <Link className="nav-bar-item" to="/add-new-doctor">Add Doctor</Link>
+        </NavLink>
+        <NavLink to="/doctors" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
+          Doctors
+        </NavLink>
+        <NavLink to="/appointments" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
+          Appointments
+        </NavLink>
+        <NavLink to="/add-new-doctor" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
+          Add Doctor
+        </NavLink>
       </nav>
     </div>
   );

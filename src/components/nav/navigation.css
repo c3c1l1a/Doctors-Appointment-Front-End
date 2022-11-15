@@ -4,9 +4,9 @@
 
 @layer components {
   .nav-bar-with-logo {
-    @apply flex flex-col w-full items-center pt-3 pl-3 gap-1 h-screen
+    @apply flex flex-col w-full items-center pt-3 pl-3 gap-1 h-screen fixed bg-white
            /* Large screen */
-           md:w-52 md:shadow
+           md:w-52 md:shadow md:relative;
   }
 
   .nav-bar-close {
