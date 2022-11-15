@@ -2,10 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
   .app {
-     @apply flex w-full flex-col md:flex-row;
+    @apply flex w-full flex-col md:flex-row;
   }
- 
 }
