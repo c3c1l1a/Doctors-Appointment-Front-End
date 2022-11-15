@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+  .auth-form {
+  	@apply flex flex-col h-screen pt-28 gap-7 
+  }
+
+  .form-input {
+  	@apply p-3 shadow-inner border-y-2
+  }
+
+  .auth-form > .submit-button {
+  	@apply bg-main p-3 font-bold
+  }
+}

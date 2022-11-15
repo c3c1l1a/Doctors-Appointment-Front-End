@@ -52,6 +52,9 @@ function Navigation() {
         <NavLink to="/delete-doctor" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
           Delete Doctor
         </NavLink>
+        <NavLink to="/login" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
+          Login
+        </NavLink>
       </nav>
     </div>
   );

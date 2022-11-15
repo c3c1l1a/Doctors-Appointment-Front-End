@@ -6,6 +6,7 @@ import BookAppointment from './components/appointments/book-appointment';
 import NewDoctorForm from './components/doctors/new-doctor-form';
 import DeleteDoctor from './components/doctors/delete-doctor';
 import DoctorsList from './components/doctors/doctors-list';
+import Login from './components/auth/login';
 import './index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -21,6 +22,7 @@ root.render(
         <Route exact path="/appointments" element={<AppointmentsList />} />
         <Route exact path="/add-new-doctor" element={<NewDoctorForm />} />
         <Route exact path="/delete-doctor" element={<DeleteDoctor />} />
+        <Route exact path="/login" element={<Login />} />
       </Routes>
     </Router>
   </React.StrictMode>,
