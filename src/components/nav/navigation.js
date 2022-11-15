@@ -40,11 +40,17 @@ function Navigation() {
         <NavLink to="/doctors" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
           Doctors
         </NavLink>
+        <NavLink to="/book-appointment" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
+          Book Appointment
+        </NavLink>
         <NavLink to="/appointments" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
           Appointments
         </NavLink>
         <NavLink to="/add-new-doctor" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
           Add Doctor
+        </NavLink>
+        <NavLink to="/delete-doctor" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
+          Delete Doctor
         </NavLink>
       </nav>
     </div>
