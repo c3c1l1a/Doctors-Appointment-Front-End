@@ -3,7 +3,7 @@ import Navigation from './nav/navigation';
 
 function AppointmentsList() {
   return (
-    <div>
+    <div className="app">
       <Navigation />
       <p>Appointments will go here</p>
     </div>
