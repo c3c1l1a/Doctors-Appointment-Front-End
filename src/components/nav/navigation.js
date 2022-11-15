@@ -37,7 +37,7 @@ function Navigation() {
         <NavLink className="nav-bar-logo" to="/">
           <img src={logo} alt="logo" />
         </NavLink>
-        <NavLink to="/doctors" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
+        <NavLink to="/" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
           Doctors
         </NavLink>
         <NavLink to="/book-appointment" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
