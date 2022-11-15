@@ -2,15 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer components {
   .nav-bar-with-logo {
-    @apply flex flex-col w-full items-center pt-10;
+    @apply flex flex-col w-full items-center pt-3 pl-3 gap-1;
   }
 
+  .nav-bar-close {
+    @apply self-start
+  }
   .nav-bar-logo {
-    @apply w-3/6 self-center h-64
+    @apply w-3/6 self-center h-64 my-5
   }
 
   .nav-bar-item {

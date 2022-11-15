@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../images/logo.png';
+import logo from '../../images/logo.png';
+import closeIcon from '../../images/close-icon.svg';
 import './navigation.css';
 
 function Navigation() {
   return (
     <div>
       <nav className="nav-bar-with-logo">
+        <div className="nav-bar-close">
+          <img src={closeIcon} alt="Close Icon" />
+        </div>
         <Link className="nav-bar-logo" to="/">
           <img src={logo} alt="logo" />
         </Link>

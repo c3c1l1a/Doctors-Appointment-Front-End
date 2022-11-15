@@ -1,5 +1,5 @@
 import React from 'react';
-import Navigation from './navigation';
+import Navigation from './nav/navigation';
 
 function NewDoctorForm() {
   return (
