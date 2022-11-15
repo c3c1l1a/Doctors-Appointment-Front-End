@@ -1,23 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo.png';
+import './navigation.css';
 
 function Navigation() {
   return (
     <div>
-      <nav className="container-md nav-test">
-        <Link to="/">
-          <img src={logo} alt="logo" className="img-fluid w-50" />
+      <nav className="nav-bar-with-logo">
+        <Link className="nav-bar-logo" to="/">
+          <img src={logo} alt="logo" />
         </Link>
-        <div className="row">
-          <Link className="col" to="/doctors">Doctors</Link>
-        </div>
-        <div className="row">
-          <Link to="/appointments">Appointments</Link>
-        </div>
-        <div className="row">
-          <Link to="/add-new-doctor">Add Doctor</Link>
-        </div>
+        <Link className="nav-bar-item nav-item-current" to="/doctors">Doctors</Link>
+        <Link className="nav-bar-item" to="/appointments">Appointments</Link>
+        <Link className="nav-bar-item" to="/add-new-doctor">Add Doctor</Link>
       </nav>
     </div>
   );
