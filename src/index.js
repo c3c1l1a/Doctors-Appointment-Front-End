@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import AppointmentsList from './components/appointments-list';
-import NewDoctorForm from './components/new-doctor-form';
-import DoctorsList from './components/doctors-list';
+import AppointmentsList from './components/appointments/appointments-list';
+import NewDoctorForm from './components/doctors/new-doctor-form';
+import DoctorsList from './components/doctors/doctors-list';
 import './index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import App from './App';

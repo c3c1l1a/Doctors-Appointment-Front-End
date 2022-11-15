@@ -1,5 +1,6 @@
 import React from 'react';
-import Navigation from './nav/navigation';
+import Navigation from '../nav/navigation';
+import './doctors.css';
 
 function DoctorsList() {
   return (

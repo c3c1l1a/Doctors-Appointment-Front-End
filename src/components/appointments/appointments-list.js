@@ -1,5 +1,6 @@
 import React from 'react';
-import Navigation from './nav/navigation';
+import Navigation from '../nav/navigation';
+import './appointments.css';
 
 function AppointmentsList() {
   return (
