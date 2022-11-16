@@ -4,8 +4,11 @@
 
 
 @layer components {
+  .form-container {
+    @apply flex justify-center w-full h-screen items-center
+  }
   .auth-form {
-  	@apply flex flex-col h-screen pt-28 gap-7 
+  	@apply flex flex-col gap-7 lg:w-3/6 lg:border-2 lg:border-main lg:p-20
   }
 
   .form-input {
