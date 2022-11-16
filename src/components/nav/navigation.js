@@ -55,6 +55,9 @@ function Navigation() {
         <NavLink to="/login" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
           Login
         </NavLink>
+        <NavLink to="/signup" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
+          Signup
+        </NavLink>
       </nav>
     </div>
   );

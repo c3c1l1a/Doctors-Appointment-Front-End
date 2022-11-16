@@ -9,6 +9,7 @@ import NewDoctorForm from './components/doctors/new-doctor-form';
 import DeleteDoctor from './components/doctors/delete-doctor';
 import DoctorsList from './components/doctors/doctors-list';
 import Login from './components/auth/login';
+import Signup from './components/auth/signup';
 import './index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -26,6 +27,7 @@ root.render(
           <Route exact path="/add-new-doctor" element={<NewDoctorForm />} />
           <Route exact path="/delete-doctor" element={<DeleteDoctor />} />
           <Route exact path="/login" element={<Login />} />
+          <Route exact path="/signup" element={<Signup />} />
         </Routes>
       </Router>
     </Provider>
