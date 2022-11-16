@@ -7,6 +7,7 @@ function SignupForm() {
   const dispatch = useDispatch();
 
   const onSubmit = (e) => {
+    e.preventDefault();
     const formObject = new FormData(e.target);
     const data = Object.fromEntries(formObject.entries());
 

@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
-import messagesReducer from './auth/login';
+import loginReducer from './auth/login';
+import signupReducer from './auth/signup';
 
 const rootReducer = combineReducers({
-  messages: messagesReducer,
+  login: loginReducer,
+  signup: signupReducer,
 });
 
 const store = configureStore({

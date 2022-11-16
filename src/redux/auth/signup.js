@@ -24,7 +24,7 @@ const signupSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    [signup.fulfilled]: (state, action) => action.payload.user,
+    [signup.fulfilled]: (state, action) => action.payload,
   },
 });
 
