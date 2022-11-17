@@ -1,10 +1,11 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../redux/auth/login';
 import './auth.css';
 
 function LoginForm() {
   const dispatch = useDispatch();
+  const signupSuccess = useSelector((state) => state.signup.success);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -16,6 +17,7 @@ function LoginForm() {
   return (
     <div className="form-container" onSubmit={onSubmit}>
       <form className="auth-form">
+        <p>{ signupSuccess }</p>
         <input className="form-input" type="email" placeholder="Email" name="email" />
         <input className="form-input" type="password" placeholder="Password" name="password" />
         <button className="submit-button" type="submit">Login</button>

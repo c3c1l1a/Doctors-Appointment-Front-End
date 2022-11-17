@@ -1,10 +1,12 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { signup } from '../../redux/auth/signup';
 import './auth.css';
 
 function SignupForm() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -12,6 +14,7 @@ function SignupForm() {
     const data = Object.fromEntries(formObject.entries());
 
     dispatch(signup(data));
+    navigate('/login');
   };
   return (
     <div className="form-container" onSubmit={onSubmit}>
