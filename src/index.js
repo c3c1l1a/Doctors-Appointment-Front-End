@@ -1,18 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 import store from './redux/configureStore';
-import AppointmentsList from './components/appointments/appointments-list';
-import BookAppointment from './components/appointments/book-appointment';
-import NewDoctorForm from './components/doctors/new-doctor-form';
-import DeleteDoctor from './components/doctors/delete-doctor';
-import DoctorsList from './components/doctors/doctors-list';
-import Login from './components/auth/login';
-import Signup from './components/auth/signup';
+import App from './App';
 import './index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,15 +13,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <Routes>
-          <Route exact path="/" element={<DoctorsList />} />
-          <Route exact path="/book-appointment" element={<BookAppointment />} />
-          <Route exact path="/appointments" element={<AppointmentsList />} />
-          <Route exact path="/add-new-doctor" element={<NewDoctorForm />} />
-          <Route exact path="/delete-doctor" element={<DeleteDoctor />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/signup" element={<Signup />} />
-        </Routes>
+        <App />
       </Router>
     </Provider>
   </React.StrictMode>,

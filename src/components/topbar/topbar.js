@@ -1,7 +1,7 @@
 import React from 'react';
 import './doctors.css';
 
-function DoctorsList() {
+function TopBar() {
   return (
     <div className="app">
       <p>All the doctors will be listed go here</p>
@@ -9,4 +9,4 @@ function DoctorsList() {
   );
 }
 
-export default DoctorsList;
+export default TopBar;

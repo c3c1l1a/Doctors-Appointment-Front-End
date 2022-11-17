@@ -1,11 +1,9 @@
 import React from 'react';
-import Navigation from '../nav/navigation';
 import './appointments.css';
 
 function BookAppointment() {
   return (
-    <div className="app">
-      <Navigation />
+    <div className="book-appointment">
       <p>Form to book appointment will go here</p>
     </div>
   );
