@@ -8,13 +8,17 @@ import DoctorsList from './components/doctors/doctors-list';
 import LoginForm from './components/auth/login-form';
 import SignupForm from './components/auth/signup-form';
 import Navigation from './components/nav/navigation';
+import Topbar from './components/topbar/topbar';
 
 import './App.css';
 
 function App() {
   return (
     <div className="app">
-      <Navigation />
+      <div className="topbar-container">
+        <Navigation />
+        <Topbar />
+      </div>
       <Routes>
         <Route exact path="/" element={<DoctorsList />} />
         <Route exact path="/book-appointment" element={<BookAppointment />} />

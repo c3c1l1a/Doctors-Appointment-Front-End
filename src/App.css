@@ -4,6 +4,10 @@
 
 @layer components {
   .app {
-    @apply flex w-full flex-col md:flex-row;
+    @apply flex w-full flex-col p-1
+  }
+
+  .topbar-container {
+    @apply flex justify-between p-3
   }
 }
