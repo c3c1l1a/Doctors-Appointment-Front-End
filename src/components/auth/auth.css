@@ -4,17 +4,22 @@
 
 @layer components {
   .form-container {
-    @apply flex justify-center w-full h-screen items-center; }
+    @apply flex justify-center w-full h-screen items-center;
+  }
 
   .auth-form {
-    @apply flex flex-col gap-7 lg:w-3/6 lg:border-2 lg:border-main lg:p-20; }
+    @apply flex flex-col gap-7 lg:w-3/6 lg:border-2 lg:border-main lg:p-20;
+  }
 
   .success-message {
-    @apply text-main; }
+    @apply text-main;
+  }
 
   .form-input {
-    @apply p-3 shadow-inner border-y-2; }
+    @apply p-3 shadow-inner border-y-2;
+  }
 
   .auth-form > .submit-button {
-    @apply bg-main p-3 font-bold; }
+    @apply bg-main p-3 font-bold;
+  }
 }
