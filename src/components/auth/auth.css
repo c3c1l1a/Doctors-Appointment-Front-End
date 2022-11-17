@@ -11,6 +11,10 @@
   	@apply flex flex-col gap-7 lg:w-3/6 lg:border-2 lg:border-main lg:p-20
   }
 
+  .success-message {
+    @apply text-main
+  }
+
   .form-input {
   	@apply p-3 shadow-inner border-y-2
   }

@@ -17,7 +17,7 @@ function LoginForm() {
   return (
     <div className="form-container" onSubmit={onSubmit}>
       <form className="auth-form">
-        <p>{ signupSuccess }</p>
+        <p className="success-message">{ signupSuccess }</p>
         <input className="form-input" type="email" placeholder="Email" name="email" />
         <input className="form-input" type="password" placeholder="Password" name="password" />
         <button className="submit-button" type="submit">Login</button>
