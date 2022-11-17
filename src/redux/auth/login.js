@@ -24,7 +24,14 @@ const loginSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    [login.fulfilled]: (state, action) => action.payload.user,
+    [login.fulfilled]: (state, action) => {
+      if (action.payload.token) {
+        localStorage.setItem('user', JSON.stringify(action.payload));
+        return { success: 'You have been logged in successfully' };
+      }
+
+      return action.payload;
+    },
   },
 });
 
