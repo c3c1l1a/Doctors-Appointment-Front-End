@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
   .topbar > .auth-link {
-  	@apply uppercase text-main text-black font-bold
-  }
+    @apply uppercase text-main text-black font-bold; }
 }

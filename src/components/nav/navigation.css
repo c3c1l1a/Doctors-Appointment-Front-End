@@ -6,8 +6,7 @@
   .nav-bar-with-logo {
     @apply flex flex-col w-full items-center pt-3 pl-3 gap-1 h-screen fixed bg-white top-0 left-0
 
-      md:w-56 md:shadow
-  }
+      md:w-56 md:shadow; }
 
   .nav-bar-close {
     @apply self-start;
