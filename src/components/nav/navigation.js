@@ -26,7 +26,7 @@ function Navigation() {
   return (
     <div>
       <button className={menuState} type="button" onClick={() => open()}>
-        <img src={humburgerMenu} alt="Close Icon" />
+        <img className="humburger-menu" src={humburgerMenu} alt="Humburger menu" />
       </button>
 
       <nav className={`nav-bar-with-logo ${navState}`}>

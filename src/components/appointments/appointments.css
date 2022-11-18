@@ -1,3 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.book-appointment-overlay {
+		@apply bg-red-200
+	}
+
+	.book-appointment-overlay {
+		@apply fixed left-0 top-0 w-full bg-[url('/src/images/book-appointments-bg.png')] bg-cover bg-center	 
+	}
+
+	.book-appointment  {
+		@apply flex flex-col h-screen  justify-center items-center gap-16 md:gap-20;
+		background: rgb(153, 193, 16, 0.8);
+		 
+	}
+
+	.book-appointment-header {
+		@apply text-white
+	}
+
+	.book-appointment-form {
+		@apply flex flex-col gap-5 text-white md:flex-row;
+	}
+
+	.book-appointment-date {
+		@apply bg-main p-5 rounded-full font-bold flex gap-3 border-2
+	}
+
+	.book-appointment-date-input {
+		@apply bg-main rounded-full font-light border-transparent border-none focus:ring-0
+	}
+	
+	.book-appointment-form > button {
+		@apply border-main border-2 p-3 rounded-full bg-white text-main font-bold md:w-48;
+	}
+
+	input[type="date"]::-webkit-inner-spin-button,
+	input[type="date"]::-webkit-calendar-picker-indicator {
+	    filter: invert(1);
+	}
+
+	input[type="date"]::-webkit-datetime-edit-month-field:focus {
+		color: white;
+		background: none;
+	}
+
+	input[type="date"]:focus-visible{
+		outline: none;
+	}
+}
+

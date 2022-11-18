@@ -23,7 +23,6 @@ function TopBar({ userSession, setUserSession }) {
   }, [location]);
 
   const signUserOut = () => {
-    console.log('what');
     setAuthLinks('');
     setSignoutLink('hidden');
 

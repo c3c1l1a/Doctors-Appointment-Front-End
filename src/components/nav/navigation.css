@@ -16,6 +16,10 @@
     @apply w-3/6 self-center h-64 my-5;
   }
 
+  .humburger-menu {
+    @apply invert
+  }
+
   .nav-bar-item {
     @apply self-end w-4/5 p-3 no-underline uppercase font-bold text-black text-lg lg:text-sm lg:w-full
       hover:bg-main hover:text-white;
