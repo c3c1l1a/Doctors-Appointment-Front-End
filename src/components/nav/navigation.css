@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .nav-bar-with-logo {
+    @apply flex flex-col w-full items-center pt-3 pl-3 gap-1 h-screen fixed bg-white
+
+      md:w-56 md:shadow md:relative;
+  }
+
+  .nav-bar-close {
+    @apply self-start;
+  }
+
+  .nav-bar-logo {
+    @apply w-3/6 self-center h-64 my-5;
+  }
+
+  .nav-bar-item {
+    @apply self-end w-4/5 p-3 no-underline uppercase font-bold text-black text-lg lg:text-sm lg:w-full
+      hover:bg-main hover:text-white;
+  }
+
+  .nav-item-current {
+    @apply bg-main text-white;
+  }
+}
