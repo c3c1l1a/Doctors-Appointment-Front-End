@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { signup } from '../../redux/auth/signup';
 import './auth.css';
 
-function SignupForm() {
+function SignupForm({ userSession }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (userSession && location.pathname === '/signup') navigate('/');
+  }, [location]);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -31,5 +37,12 @@ function SignupForm() {
     </div>
   );
 }
+
+SignupForm.propTypes = {
+  userSession: PropTypes.oneOfType([
+    PropTypes.objectOf(PropTypes.string),
+    PropTypes.oneOf(['null', 'undefined']),
+  ]).isRequired,
+};
 
 export default SignupForm;

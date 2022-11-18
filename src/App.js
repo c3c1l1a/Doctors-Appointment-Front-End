@@ -27,8 +27,8 @@ function App() {
         <Route exact path="/appointments" element={<AppointmentsList />} />
         <Route exact path="/add-new-doctor" element={<NewDoctorForm />} />
         <Route exact path="/delete-doctor" element={<DeleteDoctor />} />
-        <Route exact path="/login" element={<LoginForm setUserSession={setUserSession} />} />
-        <Route exact path="/signup" element={<SignupForm />} />
+        <Route exact path="/login" element={<LoginForm setUserSession={setUserSession} userSession={userSession} />} />
+        <Route exact path="/signup" element={<SignupForm userSession={userSession} />} />
       </Routes>
     </div>
   );
