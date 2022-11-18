@@ -18,12 +18,12 @@ function App() {
   return (
     <div className="app">
       <div className="topbar-container">
-        <Navigation />
+        <Navigation userSession={userSession} />
         <Topbar userSession={userSession} setUserSession={setUserSession} />
       </div>
       <Routes>
         <Route exact path="/" element={<DoctorsList />} />
-        <Route exact path="/book-appointment" element={<BookAppointment />} />
+        <Route exact path="/book-appointment" element={<BookAppointment userSession={userSession} />} />
         <Route exact path="/appointments" element={<AppointmentsList />} />
         <Route exact path="/add-new-doctor" element={<NewDoctorForm />} />
         <Route exact path="/delete-doctor" element={<DeleteDoctor />} />

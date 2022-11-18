@@ -1,13 +1,23 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { NavLink, useLocation } from 'react-router-dom';
 import logo from '../../images/logo.png';
 import closeIcon from '../../images/close-icon.svg';
 import humburgerMenu from '../../images/humburger-menu.svg';
 import './navigation.css';
 
-function Navigation() {
+function Navigation({ userSession }) {
   const [navState, setNavState] = useState('hidden');
   const [menuState, setMenuState] = useState('close');
+  const [privatePage, setPrivatePage] = useState('hidden');
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (userSession) {
+      setPrivatePage('');
+    } else { setPrivatePage('hidden'); }
+  }, [location]);
 
   const close = () => {
     setNavState(() => {
@@ -40,16 +50,16 @@ function Navigation() {
         <NavLink to="/" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
           Doctors
         </NavLink>
-        <NavLink to="/book-appointment" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
+        <NavLink to="/book-appointment" className={(isActive) => `${privatePage} nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
           Book Appointment
         </NavLink>
-        <NavLink to="/appointments" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
+        <NavLink to="/appointments" className={(isActive) => `${privatePage} nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
           Appointments
         </NavLink>
-        <NavLink to="/add-new-doctor" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
+        <NavLink to="/add-new-doctor" className={(isActive) => `${privatePage} nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
           Add Doctor
         </NavLink>
-        <NavLink to="/delete-doctor" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
+        <NavLink to="/delete-doctor" className={(isActive) => `${privatePage} nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
           Delete Doctor
         </NavLink>
         <NavLink to="/signup" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
@@ -59,5 +69,12 @@ function Navigation() {
     </div>
   );
 }
+
+Navigation.propTypes = {
+  userSession: PropTypes.oneOfType([
+    PropTypes.objectOf(PropTypes.string),
+    PropTypes.oneOf(['null', 'undefined']),
+  ]).isRequired,
+};
 
 export default Navigation;

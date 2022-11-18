@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './appointments.css';
 
-function BookAppointment() {
+function BookAppointment({ userSession }) {
   const [date, setDate] = useState();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const onChange = (e) => {
     setDate(e.target.value);
   };
+
+  useEffect(() => {
+    if (!userSession && location.pathname === '/book-appointment') navigate('/login');
+  }, [location]);
 
   return (
     <div className="book-appointment-overlay">
@@ -29,5 +37,12 @@ function BookAppointment() {
     </div>
   );
 }
+
+BookAppointment.propTypes = {
+  userSession: PropTypes.oneOfType([
+    PropTypes.objectOf(PropTypes.string),
+    PropTypes.oneOf(['null', 'undefined']),
+  ]).isRequired,
+};
 
 export default BookAppointment;
