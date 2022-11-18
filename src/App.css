@@ -4,8 +4,10 @@
 
 @layer components {
   .app {
-    @apply flex w-full flex-col p-1; }
+    @apply flex w-full flex-col p-1;
+  }
 
   .topbar-container {
-    @apply flex justify-between p-3; }
+    @apply flex justify-between p-3;
+  }
 }
