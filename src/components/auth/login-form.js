@@ -1,20 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../redux/auth/login';
 import './auth.css';
 
-function LoginForm() {
+function LoginForm({ setUserSession }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const signupSuccess = useSelector((state) => state.signup.success);
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     const formObject = new FormData(e.target);
     const data = Object.fromEntries(formObject.entries());
 
-    dispatch(login(data));
+    const response = await dispatch(login(data));
+    if ('token' in response.payload) setUserSession(response.payload);
     navigate('/');
   };
   return (
@@ -28,5 +30,7 @@ function LoginForm() {
     </div>
   );
 }
+
+LoginForm.propTypes = PropTypes.func.isRequired;
 
 export default LoginForm;

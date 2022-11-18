@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const LOGIN = 'auth/LOGIN';
-const initialState = [];
+const initialState = {};
 
 export const login = createAsyncThunk(
   LOGIN,
@@ -27,7 +27,7 @@ const loginSlice = createSlice({
     [login.fulfilled]: (state, action) => {
       if (action.payload.token) {
         localStorage.setItem('user', JSON.stringify(action.payload));
-        return { success: 'You have been logged in successfully' };
+        return action.payload;
       }
 
       return action.payload;
