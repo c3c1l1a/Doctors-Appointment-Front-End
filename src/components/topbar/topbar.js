@@ -53,7 +53,10 @@ function TopBar({ userSession, setUserSession }) {
 
 TopBar.propTypes = {
   userSession: PropTypes.oneOfType([
-    PropTypes.objectOf(PropTypes.string),
+    PropTypes.objectOf(PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.string,
+    ])),
     PropTypes.oneOf(['null', 'undefined']),
   ]).isRequired,
   setUserSession: PropTypes.func.isRequired,

@@ -10,7 +10,6 @@ function Navigation({ userSession }) {
   const [navState, setNavState] = useState('hidden');
   const [menuState, setMenuState] = useState('close');
   const [privatePage, setPrivatePage] = useState('hidden');
-
   const location = useLocation();
 
   useEffect(() => {
@@ -72,7 +71,10 @@ function Navigation({ userSession }) {
 
 Navigation.propTypes = {
   userSession: PropTypes.oneOfType([
-    PropTypes.objectOf(PropTypes.string),
+    PropTypes.objectOf(PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.string,
+    ])),
     PropTypes.oneOf(['null', 'undefined']),
   ]).isRequired,
 };
