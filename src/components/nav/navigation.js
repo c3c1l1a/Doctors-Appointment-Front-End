@@ -54,7 +54,7 @@ function Navigation({ userSession }) {
           Book Appointment
         </NavLink>
         <NavLink to="/appointments" className={(isActive) => `${privatePage} nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
-          Appointments
+          My Appointments
         </NavLink>
         <NavLink to="/add-new-doctor" className={(isActive) => `${privatePage} nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
           Add Doctor

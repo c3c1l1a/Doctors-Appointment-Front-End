@@ -21,15 +21,20 @@ function BookAppointment({ userSession }) {
       <div className="book-appointment">
         <h1 className="book-appointment-header">Book your appointment</h1>
         <form className="book-appointment-form">
-          <label className="book-appointment-date" htmlFor="date">
+          <label className="book-appointment-input" htmlFor="date">
             <span>Date:</span>
             <input
-              className="book-appointment-date-input"
+              className="book-appointment-date-time-input"
               id="date"
               type="date"
               value={date}
               onChange={(e) => onChange(e)}
             />
+
+          </label>
+          <label htmlFor="time" className="book-appointment-input">
+            <span>Time:</span>
+            <input id="time" type="time" className="book-appointment-date-time-input" />
           </label>
           <button type="submit">Book Now</button>
         </form>

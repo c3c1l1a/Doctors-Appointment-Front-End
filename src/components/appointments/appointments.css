@@ -25,29 +25,34 @@
 		@apply flex flex-col gap-5 text-white md:flex-row;
 	}
 
-	.book-appointment-date {
+	.book-appointment-input {
 		@apply bg-main p-5 rounded-full font-bold flex gap-3 border-2
 	}
 
-	.book-appointment-date-input {
-		@apply bg-main rounded-full font-light border-transparent border-none focus:ring-0
+	.book-appointment-date-time-input {
+		@apply bg-main rounded-full font-light border-transparent border-none focus:ring-0 w-full
 	}
 	
 	.book-appointment-form > button {
 		@apply border-main border-2 p-3 rounded-full bg-white text-main font-bold md:w-48;
 	}
 
-	input[type="date"]::-webkit-inner-spin-button,
-	input[type="date"]::-webkit-calendar-picker-indicator {
+	input::-webkit-inner-spin-button,
+	input::-webkit-calendar-picker-indicator {
 	    filter: invert(1);
 	}
 
-	input[type="date"]::-webkit-datetime-edit-month-field:focus {
+	input::-webkit-datetime-edit-month-field:focus {
 		color: white;
 		background: none;
 	}
 
-	input[type="date"]:focus-visible{
+	input::-webkit-datetime-edit-hour-field:focus {
+		color: white;
+		background: none;
+	}
+
+	input:focus-visible{
 		outline: none;
 	}
 }
