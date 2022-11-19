@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../../images/logo.png';
 import closeIcon from '../../images/close-icon.svg';
 import humburgerMenu from '../../images/humburger-menu.svg';
@@ -10,13 +10,12 @@ function Navigation({ userSession }) {
   const [navState, setNavState] = useState('hidden');
   const [menuState, setMenuState] = useState('close');
   const [privatePage, setPrivatePage] = useState('hidden');
-  const location = useLocation();
 
   useEffect(() => {
-    if (userSession) {
+    if (userSession.token) {
       setPrivatePage('');
     } else { setPrivatePage('hidden'); }
-  }, [location]);
+  }, [userSession]);
 
   const close = () => {
     setNavState(() => {
@@ -70,13 +69,10 @@ function Navigation({ userSession }) {
 }
 
 Navigation.propTypes = {
-  userSession: PropTypes.oneOfType([
-    PropTypes.objectOf(PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.string,
-    ])),
-    PropTypes.oneOf(['null', 'undefined']),
-  ]).isRequired,
+  userSession: PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ])).isRequired,
 };
 
 export default Navigation;

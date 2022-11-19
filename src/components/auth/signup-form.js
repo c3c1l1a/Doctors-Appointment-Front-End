@@ -11,7 +11,7 @@ function SignupForm({ userSession }) {
   const location = useLocation();
 
   useEffect(() => {
-    if (userSession && location.pathname === '/signup') navigate('/');
+    if (userSession.token && location.pathname === '/signup') navigate('/');
   }, [location]);
 
   const onSubmit = (e) => {
@@ -39,13 +39,10 @@ function SignupForm({ userSession }) {
 }
 
 SignupForm.propTypes = {
-  userSession: PropTypes.oneOfType([
-    PropTypes.objectOf(PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.string,
-    ])),
-    PropTypes.oneOf(['null', 'undefined']),
-  ]).isRequired,
+  userSession: PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ])).isRequired,
 };
 
 export default SignupForm;

@@ -12,7 +12,7 @@ function LoginForm({ setUserSession, userSession }) {
   const location = useLocation();
 
   useEffect(() => {
-    if (userSession && location.pathname === '/login') navigate('/');
+    if (userSession.token && location.pathname === '/login') navigate('/');
   }, [location]);
 
   const onSubmit = async (e) => {
@@ -37,13 +37,10 @@ function LoginForm({ setUserSession, userSession }) {
 }
 
 LoginForm.propTypes = {
-  userSession: PropTypes.oneOfType([
-    PropTypes.objectOf(PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.string,
-    ])),
-    PropTypes.oneOf(['null', 'undefined']),
-  ]).isRequired,
+  userSession: PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ])).isRequired,
   setUserSession: PropTypes.func.isRequired,
 };
 

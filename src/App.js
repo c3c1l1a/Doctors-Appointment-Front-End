@@ -13,7 +13,11 @@ import Topbar from './components/topbar/topbar';
 import './App.css';
 
 function App() {
-  const [userSession, setUserSession] = useState(() => JSON.parse(localStorage.getItem('user')));
+  const [userSession, setUserSession] = useState(() => {
+    const info = JSON.parse(localStorage.getItem('user'));
+    if (info) return info;
+    return { error: 'Not logged in' };
+  });
 
   return (
     <div className="app">

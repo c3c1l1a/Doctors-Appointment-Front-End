@@ -13,7 +13,7 @@ function BookAppointment({ userSession }) {
   };
 
   useEffect(() => {
-    if (!userSession && location.pathname === '/book-appointment') navigate('/login');
+    if (!userSession.token && location.pathname === '/book-appointment') navigate('/login');
   }, [location]);
 
   return (
@@ -44,13 +44,10 @@ function BookAppointment({ userSession }) {
 }
 
 BookAppointment.propTypes = {
-  userSession: PropTypes.oneOfType([
-    PropTypes.objectOf(PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.string,
-    ])),
-    PropTypes.oneOf(['null', 'undefined']),
-  ]).isRequired,
+  userSession: PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ])).isRequired,
 };
 
 export default BookAppointment;

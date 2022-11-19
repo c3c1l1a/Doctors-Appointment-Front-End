@@ -11,7 +11,7 @@ function TopBar({ userSession, setUserSession }) {
   const location = useLocation();
 
   useEffect(() => {
-    if (userSession) {
+    if (userSession.token) {
       setAuthLinks('hidden');
       setSignoutLink('');
     } else {
@@ -27,7 +27,7 @@ function TopBar({ userSession, setUserSession }) {
     setSignoutLink('hidden');
 
     localStorage.clear();
-    setUserSession(null);
+    setUserSession({ error: 'Not logged in' });
   };
 
   return (
@@ -52,13 +52,10 @@ function TopBar({ userSession, setUserSession }) {
 }
 
 TopBar.propTypes = {
-  userSession: PropTypes.oneOfType([
-    PropTypes.objectOf(PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.string,
-    ])),
-    PropTypes.oneOf(['null', 'undefined']),
-  ]).isRequired,
+  userSession: PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ])).isRequired,
   setUserSession: PropTypes.func.isRequired,
 };
 
