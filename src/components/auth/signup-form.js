@@ -23,8 +23,8 @@ function SignupForm({ userSession }) {
     navigate('/login');
   };
   return (
-    <div className="form-container" onSubmit={onSubmit}>
-      <form className="auth-form">
+    <div className="form-container">
+      <form className="auth-form" onSubmit={onSubmit}>
         <input className="form-input" type="text" placeholder="Name" name="name" />
         <input className="form-input" type="email" placeholder="Email" name="email" />
         <input className="form-input" type="text" placeholder="Role" name="role" />

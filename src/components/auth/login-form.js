@@ -25,8 +25,8 @@ function LoginForm({ setUserSession, userSession }) {
     navigate('/');
   };
   return (
-    <div className="form-container" onSubmit={onSubmit}>
-      <form className="auth-form">
+    <div className="form-container">
+      <form className="auth-form" onSubmit={onSubmit}>
         <p className="success-message">{ signupSuccess }</p>
         <input className="form-input" type="email" placeholder="Email" name="email" />
         <input className="form-input" type="password" placeholder="Password" name="password" />

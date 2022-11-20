@@ -55,5 +55,19 @@
 	input:focus-visible{
 		outline: none;
 	}
+
+	.appmentment-message-container {
+		@apply flex flex-col 
+	}
+
+	.textarea-input {
+		@apply p-3 text-black
+	}
+
+	.dropdown-input {
+		@apply text-black
+	}
+
+
 }
 
