@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { getAppointments } from '../../redux/appointments/appointments';
 import mockDoctor from './mock';
 import clock from '../../images/clock.svg';
+import binIcon from '../../images/bin-icon.svg';
 import './appointments-list.css';
 
 function AppointmentsList({ userSession }) {
@@ -21,6 +22,10 @@ function AppointmentsList({ userSession }) {
       setAppointments(response.payload);
     })();
   }, []);
+
+  const deleteAppointment = () => {
+    console.log('deleteAppointment');
+  };
 
   return (
     <ul className="appointments-list">
@@ -41,7 +46,12 @@ function AppointmentsList({ userSession }) {
             }}
           >
             <div className="appointment-time">
-              <p className="appointment-time-header">Appointment Date</p>
+              <div className="appointment-time-header-bar">
+                <p className="appointment-time-header">Appointment Date</p>
+                <button type="button" onClick={() => deleteAppointment()}>
+                  <img src={binIcon} alt="delete icon" className="bin-icon" />
+                </button>
+              </div>
               <div className="appointment-time-details">
                 <img src={clock} alt="clock icoon" className="clock-icon" />
                 <p>{date}</p>
