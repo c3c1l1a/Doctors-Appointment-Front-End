@@ -1,11 +1,9 @@
 import React from 'react';
-import Navigation from '../nav/navigation';
 import './appointments.css';
 
 function AppointmentsList() {
   return (
-    <div className="app">
-      <Navigation />
+    <div className="appointments-list">
       <p>Appointments will go here</p>
     </div>
   );
