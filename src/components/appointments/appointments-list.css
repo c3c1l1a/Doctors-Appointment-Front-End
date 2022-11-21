@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.appointments-list {
+		@apply p-3 grid gap-3 grid-cols-1 md:grid-cols-3  md:w-9/12 md:m-auto
+	}
+
+	.appoitment-item-pic {
+		@apply w-48 rounded-full 
+	}
+
+	.appoitment-item {
+		@apply flex items-center p-2 shadow-md shadow-black rounded
+	}
+
+	.appoitment-item-details {
+		@apply flex flex-col p-2 w-full gap-1 md:w-fit
+	}
+
+	.appoitment-item-details > * {
+		@apply m-0
+	}
+
+	.item-header {
+		@apply font-bold uppercase
+	}
+
+	.item-date-time {
+		@apply flex gap-1
+	}
+
+	.item-date-time > span:first-child {
+		@apply font-bold
+	}
+	
+}

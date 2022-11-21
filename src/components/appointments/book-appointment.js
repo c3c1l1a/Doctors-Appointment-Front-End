@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { newAppointment } from '../../redux/appointments/new-appointment';
-import './appointments.css';
+import './book-appointment.css';
 
 function BookAppointment({ userSession }) {
   const location = useLocation();
