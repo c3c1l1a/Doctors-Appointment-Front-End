@@ -21,7 +21,6 @@ function BookAppointment({ userSession }) {
 
     data.user_id = userSession.id;
     data.token = userSession.token;
-    console.log(data.time_of_appointment, data.day_of_appointment);
 
     dispatch(newAppointment(data));
     navigate('/appointments');

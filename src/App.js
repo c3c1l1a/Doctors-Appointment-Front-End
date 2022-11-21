@@ -28,7 +28,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<DoctorsList />} />
         <Route exact path="/book-appointment" element={<BookAppointment userSession={userSession} />} />
-        <Route exact path="/appointments" element={<AppointmentsList />} />
+        <Route exact path="/appointments" element={<AppointmentsList userSession={userSession} />} />
         <Route exact path="/add-new-doctor" element={<NewDoctorForm />} />
         <Route exact path="/delete-doctor" element={<DeleteDoctor />} />
         <Route exact path="/login" element={<LoginForm setUserSession={setUserSession} userSession={userSession} />} />
