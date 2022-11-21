@@ -9,33 +9,27 @@ export default (i) => {
   const doctors = [
     {
       src: doctor1,
-      bgColor: '#99c110',
-      color: '#ffffff',
+      color: '#99c110',
     },
     {
       src: doctor2,
-      bgColor: '#ffc600',
-      color: '#ffffff',
+      color: '#ffc600',
     },
     {
       src: doctor3,
-      bgColor: '#252525',
-      color: '#ffffff',
+      color: '#252525',
     },
     {
       src: doctor4,
-      bgColor: '#10bbb5',
-      color: '#ffffff',
+      color: '#10bbb5',
     },
     {
       src: doctor5,
-      bgColor: '#99c110',
-      color: '#ffffff',
+      color: '#99c110',
     },
     {
       src: doctor6,
-      bgColor: '#ffc600',
-      color: '#ffffff',
+      color: '#ffc600',
     },
   ];
 
