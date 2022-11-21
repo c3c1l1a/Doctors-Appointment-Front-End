@@ -18,6 +18,7 @@ function SignupForm({ userSession }) {
     e.preventDefault();
     const formObject = new FormData(e.target);
     const data = Object.fromEntries(formObject.entries());
+    data.role = 'admin';
 
     dispatch(signup(data));
     navigate('/login');
@@ -27,7 +28,6 @@ function SignupForm({ userSession }) {
       <form className="auth-form" onSubmit={onSubmit}>
         <input className="form-input" type="text" placeholder="Name" name="name" />
         <input className="form-input" type="email" placeholder="Email" name="email" />
-        <input className="form-input" type="text" placeholder="Role" name="role" />
         <input className="form-input" type="text" placeholder="Birth Date" name="birth_date" />
         <input className="form-input" type="text" placeholder="Gender" name="gender" />
         <input className="form-input" type="password" placeholder="Password" name="password" />
