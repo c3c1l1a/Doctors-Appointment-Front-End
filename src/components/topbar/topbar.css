@@ -4,5 +4,6 @@
 
 @layer components {
   .topbar > .auth-link {
-    @apply uppercase text-main text-white font-bold z-50; }
+    @apply uppercase text-main text-white font-bold z-50;
+  }
 }

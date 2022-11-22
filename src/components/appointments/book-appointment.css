@@ -3,86 +3,78 @@
 @tailwind utilities;
 
 @layer components {
-	.book-appointment-overlay {
-		@apply bg-red-200
-	}
+  .book-appointment-overlay {
+    @apply fixed left-0 top-0 w-full bg-[url('/src/images/book-appointments-bg.png')] bg-cover bg-center;
+  }
 
-	.book-appointment-overlay {
-		@apply fixed left-0 top-0 w-full bg-[url('/src/images/book-appointments-bg.png')] bg-cover bg-center	 
-	}
+  .book-appointment {
+    @apply flex flex-col h-screen  justify-center items-center gap-16 md:gap-20;
 
-	.book-appointment  {
-		@apply flex flex-col h-screen  justify-center items-center gap-16 md:gap-20;
-		background: rgb(153, 193, 16, 0.8);
-		 
-	}
+    background: rgb(153, 193, 16, 0.8);
+  }
 
-	.book-appointment-header {
-		@apply text-white
-	}
+  .book-appointment-header {
+    @apply text-white;
+  }
 
-	.book-appointment-form {
-		@apply flex flex-col gap-5 text-white md:flex-row md:flex-wrap md:justify-center
-	}
+  .book-appointment-form {
+    @apply flex flex-col gap-5 text-white md:flex-row md:flex-wrap md:justify-center;
+  }
 
-	.book-appointment-form > * {
-		@apply md:basis-60 relative
-	}
+  .book-appointment-form > * {
+    @apply md:basis-60 relative;
+  }
 
-	.book-appointment-date-input {
-		@apply p-0 font-bold flex  gap-2 border-2 h-fit
-	}
+  .book-appointment-date-input {
+    @apply p-0 font-bold flex  gap-2 border-2 h-fit;
+  }
 
-	.book-appointment-date-time-input {
-		@apply bg-main rounded-full font-light border-transparent 
-		border-2 border-white focus:ring-0 w-full p-3
-	}
-	
-	.book-appointment-form > button {
-		@apply border-main border-2 p-3 rounded-full bg-white text-main font-bold md:w-48;
-	}
+  .book-appointment-date-time-input {
+    @apply bg-main rounded-full font-light border-transparent
+      border-2 border-white focus:ring-0 w-full p-3;
+  }
 
-	input::-webkit-inner-spin-button,
-	input::-webkit-calendar-picker-indicator {
-	    filter: invert(1);
-	}
+  .book-appointment-form > button {
+    @apply border-main border-2 p-3 rounded-full bg-white text-main font-bold md:w-48;
+  }
 
-	input::-webkit-datetime-edit-month-field:focus {
-		color: white;
-		background: none;
-	}
+  input::-webkit-inner-spin-button,
+  input::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
 
-	input::-webkit-datetime-edit-hour-field:focus {
-		color: white;
-		background: none;
-	}
+  input:focus-visible {
+    outline: none;
+  }
 
-	input:focus-visible{
-		outline: none;
-	}
+  input::-webkit-datetime-edit-month-field:focus {
+    color: white;
+    background: none;
+  }
 
-	.appmentment-message-container {
-		@apply flex flex-col 
-	}
+  input::-webkit-datetime-edit-hour-field:focus {
+    color: white;
+    background: none;
+  }
 
-	.textarea-input {
-		@apply p-0 text-black  rounded-full ring-2 ring-main h-fit p-3 overflow-auto
-		focus:outline-0
-	}
+  .appmentment-message-container {
+    @apply flex flex-col;
+  }
 
+  .textarea-input {
+    @apply p-0 text-black  rounded-full ring-2 ring-main h-fit p-3 overflow-auto
+      focus:outline-0;
+  }
 
-	.doctors-dropdown {
-		@apply bg-main p-3 border-2 border-white rounded-full w-full
-	}
+  .doctors-dropdown {
+    @apply bg-main p-3 border-2 border-white rounded-full w-full;
+  }
 
-	.dropdown-input {
-		@apply text-black w-full bg-main text-white  focus:outline-0
-	}
+  .dropdown-input {
+    @apply text-black w-full bg-main text-white  focus:outline-0;
+  }
 
-	.errors {
-		@apply text-red-500 absolute bottom-9 left-3
-	}
-
-
+  .errors {
+    @apply text-red-500 absolute bottom-9 left-3;
+  }
 }
-
