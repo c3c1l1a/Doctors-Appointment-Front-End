@@ -26,7 +26,7 @@
 	}
 
 	.book-appointment-form > * {
-		@apply md:basis-60
+		@apply md:basis-60 relative
 	}
 
 	.book-appointment-date-input {
@@ -72,11 +72,15 @@
 
 
 	.doctors-dropdown {
-		@apply bg-main p-3 border-2 border-white rounded-full
+		@apply bg-main p-3 border-2 border-white rounded-full w-full
 	}
 
 	.dropdown-input {
 		@apply text-black w-full bg-main text-white  focus:outline-0
+	}
+
+	.errors {
+		@apply text-red-500 absolute bottom-9 left-3
 	}
 
 

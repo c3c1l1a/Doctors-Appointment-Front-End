@@ -44,13 +44,14 @@ function AppointmentsList({ userSession }) {
           const dateObject = new Date(appointment.day_of_appointment);
           date = dateObject.toDateString();
         }
+
         if (appointment.id !== -1) {
           return (
             <li
               key={appointment.id}
               className="appointment-item"
               style={{
-                borderColor: mockDoctor(i).color,
+                borderColor: mockDoctor(i % 5).color,
               }}
             >
               <div className="appointment-time">
