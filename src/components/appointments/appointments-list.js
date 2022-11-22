@@ -36,36 +36,45 @@ function AppointmentsList({ userSession }) {
           const dateObject = new Date(appoitment.day_of_appointment);
           date = dateObject.toDateString();
         }
-
+        if (appoitment.id !== -1) {
+          return (
+            <li
+              key={appoitment.id}
+              className="appoitment-item"
+              style={{
+                'border-color': mockDoctor(i).color,
+              }}
+            >
+              <div className="appointment-time">
+                <div className="appointment-time-header-bar">
+                  <p className="appointment-time-header">Appointment Date</p>
+                  <button type="button" onClick={() => deleteAppointment()}>
+                    <img src={binIcon} alt="delete icon" className="bin-icon" />
+                  </button>
+                </div>
+                <div className="appointment-time-details">
+                  <div className="appointment-time-details-item">
+                    <img src={clock} alt="clock icoon" className="clock-icon" />
+                    <p>{date}</p>
+                    <p>{appoitment.time_of_appointment.match(/([0-9]+):([0-9]+)/g)}</p>
+                  </div>
+                  <div>
+                    <p className="message">{appoitment.message}</p>
+                  </div>
+                </div>
+              </div>
+              <div className="appointment-doctor">
+                <img src={mockDoctor(i).src} alt="doctor" className="appointment-doctor-pic" />
+                <div className="appointment-doctor-details">
+                  <p className="appointment-doctor-name">{appoitment.doctor_name}</p>
+                  <p className="appointment-doctor-speciality">Ophthamologist</p>
+                </div>
+              </div>
+            </li>
+          );
+        }
         return (
-          <li
-            key={appoitment.id}
-            className="appoitment-item"
-            style={{
-              'border-color': mockDoctor(i).color,
-            }}
-          >
-            <div className="appointment-time">
-              <div className="appointment-time-header-bar">
-                <p className="appointment-time-header">Appointment Date</p>
-                <button type="button" onClick={() => deleteAppointment()}>
-                  <img src={binIcon} alt="delete icon" className="bin-icon" />
-                </button>
-              </div>
-              <div className="appointment-time-details">
-                <img src={clock} alt="clock icoon" className="clock-icon" />
-                <p>{date}</p>
-                <p>{appoitment.time_of_appointment.match(/([0-9]+):([0-9]+)/g)}</p>
-              </div>
-            </div>
-            <div className="appointment-doctor">
-              <img src={mockDoctor(i).src} alt="doctor" className="appointment-doctor-pic" />
-              <div className="appointment-doctor-details">
-                <p className="appointment-doctor-name">{appoitment.doctor_name}</p>
-                <p className="appointment-doctor-speciality">Ophthamologist</p>
-              </div>
-            </div>
-          </li>
+          <p key={appoitment.id} />
         );
       })}
     </ul>

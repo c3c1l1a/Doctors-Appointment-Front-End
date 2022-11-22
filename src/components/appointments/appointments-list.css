@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components {
+	.appointments-list p {
+		@apply m-0
+	}
 	.appointments-list {
 		@apply p-0 grid grid-cols-1 md:grid-cols-3 md:w-4/5 md:m-auto
 	}
@@ -26,7 +29,7 @@
 	}
 
 	.appointment-time {
-		@apply p-2 border-b-2
+		@apply p-2 border-b-2 flex flex-col gap-2
 	}
 
 	.appointment-time > .appointment-time-header {
@@ -34,7 +37,15 @@
 	}
 
 	.appointment-time-details {
-		@apply flex gap-3 font-light p-2
+		@apply flex font-light flex-col
+	}
+
+	.appointment-time-details-item {
+		@apply flex gap-3 font-light
+	}
+
+	.message {
+		@apply text-ellipsis whitespace-nowrap overflow-hidden
 	}
 
 	.appointment-time-details > p {
