@@ -7,7 +7,7 @@
 		@apply m-0
 	}
 	.appointments-list {
-		@apply p-0 grid grid-cols-1 md:grid-cols-3 md:w-4/5 md:m-auto
+		@apply p-0 grid grid-cols-1 md:grid-cols-3 md:w-4/5 md:mx-auto
 	}
 
 	.appointment-time-header-bar {
@@ -21,7 +21,7 @@
 	}
 
 	.appointments-list-header {
-		@apply md:col-span-3 p-3 font-bold text-xl
+		@apply md:col-span-3 p-3 font-bold text-xl 
 	}
 
 	.appointment-item {
@@ -32,8 +32,8 @@
 		@apply p-2 border-b-2 flex flex-col gap-2
 	}
 
-	.appointment-time > .appointment-time-header {
-		@apply text-slate-500 p-0
+	.appointment-time-header {
+		@apply text-slate-500 p-0 text-sm
 	}
 
 	.appointment-time-details {

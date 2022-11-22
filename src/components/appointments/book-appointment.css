@@ -22,15 +22,20 @@
 	}
 
 	.book-appointment-form {
-		@apply flex flex-col gap-5 text-white md:flex-row;
+		@apply flex flex-col gap-5 text-white md:flex-row md:flex-wrap md:justify-center
 	}
 
-	.book-appointment-input {
-		@apply bg-main p-5 rounded-full font-bold flex gap-3 border-2
+	.book-appointment-form > * {
+		@apply md:basis-60
+	}
+
+	.book-appointment-date-input {
+		@apply p-0 font-bold flex  gap-2 border-2 h-fit
 	}
 
 	.book-appointment-date-time-input {
-		@apply bg-main rounded-full font-light border-transparent border-none focus:ring-0 w-full
+		@apply bg-main rounded-full font-light border-transparent 
+		border-2 border-white focus:ring-0 w-full p-3
 	}
 	
 	.book-appointment-form > button {
@@ -61,11 +66,17 @@
 	}
 
 	.textarea-input {
-		@apply p-3 text-black
+		@apply p-0 text-black  rounded-full ring-2 ring-main h-fit p-3 overflow-auto
+		focus:outline-0
+	}
+
+
+	.doctors-dropdown {
+		@apply bg-main p-3 border-2 border-white rounded-full
 	}
 
 	.dropdown-input {
-		@apply text-black
+		@apply text-black w-full bg-main text-white  focus:outline-0
 	}
 
 

@@ -31,18 +31,15 @@ function BookAppointment({ userSession }) {
       <div className="book-appointment">
         <h1 className="book-appointment-header">Book your appointment</h1>
         <form className="book-appointment-form" onSubmit={onSubmit}>
-          <label className="book-appointment-input" htmlFor="date">
-            <span>Date:</span>
+          <label className="" htmlFor="date">
             <input
               className="book-appointment-date-time-input"
               id="date"
               type="date"
               name="day_of_appointment"
             />
-
           </label>
-          <label htmlFor="time" className="book-appointment-input">
-            <span>Time:</span>
+          <label htmlFor="time" className="">
             <input
               id="time"
               type="time"
@@ -51,19 +48,19 @@ function BookAppointment({ userSession }) {
             />
           </label>
           <textarea
+            rows="1"
+            wrap="physical"
             type="text"
             name="message"
             className="textarea-input"
-            placeholder="Message"
+            placeholder="What is the problem?"
           />
-          <label htmlFor="doctors">
-            Choose a doctor:
+          <label htmlFor="doctors" className="doctors-dropdown">
             <select id="doctors" name="doctor_id" size="1" className="dropdown-input">
               <option value="no-value">Doctor</option>
               <option value="1">Dr Wendy</option>
             </select>
           </label>
-
           <button type="submit">Book Now</button>
 
         </form>

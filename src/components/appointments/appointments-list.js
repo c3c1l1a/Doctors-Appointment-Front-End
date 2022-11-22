@@ -66,9 +66,6 @@ function AppointmentsList({ userSession }) {
                     <p>{date}</p>
                     <p>{appointment.time_of_appointment.match(/([0-9]+):([0-9]+)/g)}</p>
                   </div>
-                  <div>
-                    <p className="message">{appointment.message}</p>
-                  </div>
                 </div>
               </div>
               <div className="appointment-doctor">
@@ -76,6 +73,7 @@ function AppointmentsList({ userSession }) {
                 <div className="appointment-doctor-details">
                   <p className="appointment-doctor-name">{appointment.doctor_name}</p>
                   <p className="appointment-doctor-speciality">Ophthamologist</p>
+                  <p className="message">{appointment.message}</p>
                 </div>
               </div>
             </li>
