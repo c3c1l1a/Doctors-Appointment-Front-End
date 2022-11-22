@@ -24,7 +24,7 @@
 		@apply md:col-span-3 p-3 font-bold text-xl
 	}
 
-	.appoitment-item {
+	.appointment-item {
 		@apply rounded shadow-lg shadow-black p-3 bg-white border-l-4 m-2 border-[#ffb701]
 	}
 
