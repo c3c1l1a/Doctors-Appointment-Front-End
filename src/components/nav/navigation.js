@@ -45,7 +45,7 @@ function Navigation({ userSession }) {
         <NavLink className="nav-bar-logo" to="/">
           <img src={logo} alt="logo" />
         </NavLink>
-        <NavLink to="/" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
+        <NavLink to="/doctors" className={(isActive) => `${privatePage} nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
           Doctors
         </NavLink>
         <NavLink to="/book-appointment" className={(isActive) => `${privatePage} nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
@@ -62,6 +62,9 @@ function Navigation({ userSession }) {
         </NavLink>
         <NavLink to="/signup" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
           Signup
+        </NavLink>
+        <NavLink to="/Login" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
+          Login
         </NavLink>
       </nav>
     </div>

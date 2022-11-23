@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import AppointmentsList from './components/appointments/appointments-list';
+import Splash from './components/splash/splash';
 import BookAppointment from './components/appointments/book-appointment';
 import NewDoctorForm from './components/doctors/new-doctor-form';
 import DeleteDoctor from './components/doctors/delete-doctor';
@@ -26,7 +27,8 @@ function App() {
         <Topbar userSession={userSession} setUserSession={setUserSession} />
       </div>
       <Routes>
-        <Route exact path="/" element={<DoctorsList />} />
+        <Route exact path="/" element={<Splash />} />
+        <Route exact path="/doctors" element={<DoctorsList />} />
         <Route exact path="/book-appointment" element={<BookAppointment userSession={userSession} />} />
         <Route exact path="/appointments" element={<AppointmentsList userSession={userSession} />} />
         <Route exact path="/add-new-doctor" element={<NewDoctorForm />} />
