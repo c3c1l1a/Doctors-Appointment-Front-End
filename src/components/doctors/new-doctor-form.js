@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { newDoctor } from '../../redux/doctors/new-doctor';
 
-import './doctors.css';
+import './new-doctor-form.css';
 
 function NewDoctorForm({ userSession }) {
   const [errors, setErrors] = useState({});
@@ -16,7 +16,16 @@ function NewDoctorForm({ userSession }) {
     else delete errors.name;
 
     if (input.photo.length <= 0) errors.photo = '*Please enter url to doctors photo';
-    else delete errors.photo;
+    else {
+      try {
+        const photoUrl = new URL(input.photo);
+        console.log(photoUrl);
+        delete errors.photo;
+      } catch (_) {
+        errors.photo = '*Make sure the link is well formatted';
+      }
+      // delete errors.photo;
+    }
 
     if (input.specialty.length <= 0) errors.speciality = '*Please enter specialty';
     else delete errors.speciality;
@@ -37,6 +46,7 @@ function NewDoctorForm({ userSession }) {
     if (Object.keys(errors).length === 0) {
       data.user_id = userSession.id;
       data.token = userSession.token;
+
       dispatch(newDoctor(data));
       navigate('/');
     } else { navigate('/add-new-doctor'); }

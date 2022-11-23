@@ -1,5 +1,4 @@
 import React from 'react';
-import './doctors.css';
 
 function DeleteDoctor() {
   return (

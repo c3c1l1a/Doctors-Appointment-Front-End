@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.doctors-list {
+	@apply flex flex-col gap-4 md:flex-row
+}
+
+.doctor-card {
+	@apply flex flex-col bg-white rounded shadow-lg shadow-black px-3 py-8 gap-3 md:w-80 hover:scale-95
+}
+
+.doctor-card  p {
+	@apply m-0
+}
+
+.doctor-photo {
+	@apply rounded-full w-60 self-center
+}
+
+.doctor-name {
+	@apply uppercase font-bold text-center
+}
+
+.doctor-card-divider {
+	@apply my-2 mx-auto w-48 h-1 rounded border-dotted border-2
+}
+
+.doctor-specialty {
+	@apply text-sm text-gray-500 text-center
+}
+
+.doctor-bio {
+	@apply text-sm text-gray-500 text-center;
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical; 
+}
+
+.doctor-social-media {
+	@apply flex justify-center gap-2 justify-self-end
+}
+
+.doctor-social-media > * {
+	@apply border-2 rounded-full w-10;
+}
+
