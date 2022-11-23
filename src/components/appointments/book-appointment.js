@@ -28,7 +28,6 @@ function BookAppointment({ userSession }) {
     if (input.time_of_appointment.length <= 0) errors.time_of_appointment = '*Pick a time';
     else delete errors.time_of_appointment;
 
-    console.log('this is happening also', errors);
     setErrors(errors);
   };
 

@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.add-doctor-form {
+	@apply flex flex-col gap-4
+}
+
+.add-doctor-form > div {
+	@apply flex flex-col relative pt-5
+}
+
+.add-doctor-errors {
+	@apply absolute -top-1 text-red-600
+}
+
+.add-doctor-form > .submit-button {
+	@apply border-2 text-white
+}

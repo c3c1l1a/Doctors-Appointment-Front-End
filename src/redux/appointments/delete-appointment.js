@@ -20,10 +20,7 @@ const deleteAppointmentSlice = createSlice({
   name: 'removeAppointment',
   initialState,
   reducers: {
-    deleteAppointment: (state) => {
-      console.log(state);
-      return state;
-    },
+    deleteAppointment: (state) => state,
   },
 });
 
