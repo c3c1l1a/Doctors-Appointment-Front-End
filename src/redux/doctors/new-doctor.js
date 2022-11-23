@@ -6,18 +6,16 @@ const initialState = [];
 export const newDoctor = createAsyncThunk(
   NEW_DOCTOR,
   async (data) => {
-    const { token, ...ramainingData } = data;
+    const { token, ...remainingData } = data;
     const response = await fetch('http://localhost:3001/api/v1/doctors', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Authorization: token,
       },
-      body: JSON.stringify(ramainingData),
+      body: JSON.stringify(remainingData),
     });
-    response.data = await response.json();
-
-    return response.data;
+    await response.json();
   },
 );
 

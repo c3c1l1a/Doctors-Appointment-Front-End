@@ -18,7 +18,7 @@ function NewDoctorForm({ userSession }) {
     if (input.photo.length <= 0) errors.photo = '*Please enter url to doctors photo';
     else delete errors.photo;
 
-    if (input.speciality.length <= 0) errors.speciality = '*Please enter speciality';
+    if (input.specialty.length <= 0) errors.speciality = '*Please enter specialty';
     else delete errors.speciality;
 
     if (input.bio.length <= 0) errors.bio = "*Please enter doctor's bio";
@@ -54,8 +54,8 @@ function NewDoctorForm({ userSession }) {
           <input className="" type="text" placeholder="Paste photo url" name="photo" />
         </div>
         <div>
-          <p className="add-doctor-errors">{errors.speciality}</p>
-          <input className="" type="text" placeholder="Speciality" name="speciality" />
+          <p className="add-doctor-errors">{errors.specialty}</p>
+          <input className="" type="text" placeholder="Specialty" name="specialty" />
         </div>
         <div>
           <p className="add-doctor-errors">{errors.bio}</p>

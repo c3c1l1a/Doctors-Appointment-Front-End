@@ -26,7 +26,7 @@ function App() {
         <Topbar userSession={userSession} setUserSession={setUserSession} />
       </div>
       <Routes>
-        <Route exact path="/" element={<DoctorsList />} />
+        <Route exact path="/" element={<DoctorsList userSession={userSession} />} />
         <Route exact path="/book-appointment" element={<BookAppointment userSession={userSession} />} />
         <Route exact path="/appointments" element={<AppointmentsList userSession={userSession} />} />
         <Route exact path="/add-new-doctor" element={<NewDoctorForm userSession={userSession} />} />
