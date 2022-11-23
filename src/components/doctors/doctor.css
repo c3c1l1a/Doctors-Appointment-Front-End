@@ -22,12 +22,12 @@
   padding: 5px 10px;
   text-align: center;
   background-color: white;
-  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
   transition: ease-in 0.3s;
 }
 
 .doc-card:hover {
-  box-shadow: 0px 0px 10px 10px rgb(119, 116, 116);
+  box-shadow: 0 0 10px 10px rgb(119, 116, 116);
   transform: scale(1.1);
 }
 
@@ -37,7 +37,7 @@
 
 .dtl-btn {
   background-color: #99c110;
-  border: 3px solid #ffffff;
+  border: 3px solid #fff;
   color: #111;
   padding: 5px 10px;
   width: 150px;
@@ -58,7 +58,7 @@
 }
 
 .Modal {
-  background-color: White;
+  background-color: white;
   padding: 25px;
   border-radius: 15px;
   border: 2px solid black;
