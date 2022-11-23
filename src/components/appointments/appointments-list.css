@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .appointments-list p {
+    @apply m-0;
+  }
+
+  .appointments-list {
+    @apply p-0 grid grid-cols-1 md:grid-cols-3 md:w-4/5 md:mx-auto;
+  }
+
+  .appointment-time-header-bar {
+    @apply flex justify-between;
+  }
+
+  .bin-icon {
+    width: 30px;
+    height: 30px;
+    filter: invert(11%) sepia(99%) saturate(6853%) hue-rotate(8deg) brightness(106%) contrast(117%);
+  }
+
+  .appointments-list-header {
+    @apply md:col-span-3 p-3 font-bold text-xl;
+  }
+
+  .appointment-item {
+    @apply rounded shadow-lg shadow-black p-3 bg-white border-l-4 m-2 border-[#ffb701];
+  }
+
+  .appointment-time {
+    @apply p-2 border-b-2 flex flex-col gap-2;
+  }
+
+  .appointment-time-header {
+    @apply text-slate-500 p-0 text-sm;
+  }
+
+  .appointment-time-details {
+    @apply flex font-light flex-col;
+  }
+
+  .appointment-time-details-item {
+    @apply flex gap-3 font-light;
+  }
+
+  .message {
+    @apply text-ellipsis whitespace-nowrap overflow-hidden;
+  }
+
+  .appointment-time-details > p {
+    @apply m-0;
+  }
+
+  .clock-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .appointment-doctor {
+    @apply flex p-2 gap-3;
+  }
+
+  .appointment-doctor-details {
+    @apply flex gap-1 flex-col w-full;
+  }
+
+  .appointment-doctor-details > p {
+    @apply m-0;
+  }
+
+  .appointment-doctor-pic {
+    @apply bg-gray-200 rounded-full;
+
+    width: 60px;
+    height: 60px;
+  }
+
+  .appointment-doctor-name {
+    @apply font-bold;
+  }
+
+  .appointment-doctor-speciality {
+    @apply text-slate-500;
+  }
+}

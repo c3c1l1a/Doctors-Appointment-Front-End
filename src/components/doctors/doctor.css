@@ -1,0 +1,91 @@
+.doc-list {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+  background: #99c110;
+}
+
+.img-doc {
+  width: 200px;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+
+.doc-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 5px 10px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+  transition: ease-in 0.3s;
+}
+
+.doc-card:hover {
+  box-shadow: 0 0 10px 10px rgb(119, 116, 116);
+  transform: scale(1.1);
+}
+
+.doc-card-hidden {
+  display: none;
+}
+
+.dtl-btn {
+  background-color: #99c110;
+  border: 3px solid #fff;
+  color: #111;
+  padding: 5px 10px;
+  width: 150px;
+  font-size: 20px;
+  border-radius: 15px;
+  transition: 0.2s ease-in;
+  margin-bottom: 9px;
+}
+
+.dtl-btn:hover {
+  border: 3px solid #99c110;
+  background-color: white;
+  color: #99c110;
+}
+
+#hide-Modal {
+  display: none;
+}
+
+.Modal {
+  background-color: white;
+  padding: 25px;
+  border-radius: 15px;
+  border: 2px solid black;
+}
+
+.top-part {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 700px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.img-doc-mod {
+  width: 300px;
+  border: 3px solid #99c110;
+  border-radius: 18px;
+}
+
+.MN {
+  font-size: 35px;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.MH {
+  font-size: 20px;
+  font-weight: 300;
+}
