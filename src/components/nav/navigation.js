@@ -45,7 +45,7 @@ function Navigation({ userSession }) {
         <NavLink className="nav-bar-logo" to="/">
           <img src={logo} alt="logo" />
         </NavLink>
-        <NavLink to="/doctors-list" onClick={() => close()} className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
+        <NavLink to="/doctors-list" onClick={() => close()} className={(isActive) => `${privatePage} nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
           All Doctors
         </NavLink>
         <NavLink to="/add-new-doctor" onClick={() => close()} className={(isActive) => `${privatePage} nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
