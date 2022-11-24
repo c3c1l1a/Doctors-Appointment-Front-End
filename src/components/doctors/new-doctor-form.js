@@ -19,7 +19,7 @@ function NewDoctorForm({ userSession }) {
     else {
       try {
         const photoUrl = new URL(input.photo);
-        console.log(photoUrl);
+        errors.photo = photoUrl.href;
         delete errors.photo;
       } catch (_) {
         errors.photo = '*Make sure the link is well formatted';

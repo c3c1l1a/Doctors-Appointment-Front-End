@@ -22,7 +22,6 @@ function DoctorDetails({ doctorId, setDoctorId }) {
   };
 
   const deleteDoctor = () => {
-    console.log('Delete doctor');
   };
 
   const bookAppointment = () => {
