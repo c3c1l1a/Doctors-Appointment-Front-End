@@ -45,23 +45,17 @@ function Navigation({ userSession }) {
         <NavLink className="nav-bar-logo" to="/">
           <img src={logo} alt="logo" />
         </NavLink>
-        <NavLink to="/" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
+        <NavLink to="/" onClick={() => close()} className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
           Doctors
         </NavLink>
-        <NavLink to="/book-appointment" className={(isActive) => `${privatePage} nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
+        <NavLink to="/book-appointment" onClick={() => close()} className={(isActive) => `${privatePage} nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
           Book Appointment
         </NavLink>
-        <NavLink to="/appointments" className={(isActive) => `${privatePage} nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
+        <NavLink to="/appointments" onClick={() => close()} className={(isActive) => `${privatePage} nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
           My Appointments
         </NavLink>
-        <NavLink to="/add-new-doctor" className={(isActive) => `${privatePage} nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
+        <NavLink to="/add-new-doctor" onClick={() => close()} className={(isActive) => `${privatePage} nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
           Add Doctor
-        </NavLink>
-        <NavLink to="/delete-doctor" className={(isActive) => `${privatePage} nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
-          Delete Doctor
-        </NavLink>
-        <NavLink to="/signup" className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
-          Signup
         </NavLink>
       </nav>
     </div>

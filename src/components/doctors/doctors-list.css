@@ -3,9 +3,11 @@
 @tailwind utilities;
 
 .doctors-list {
-	@apply flex flex-col gap-4 md:flex-row  p-3
+	@apply flex flex-col gap-4 p-3 md:justify-center
 }
-
+.doctors-list-container {
+	@apply flex flex-col md:flex-row gap-4 p-3  md:justify-center
+}
 .doctor-card {
 	@apply flex flex-col bg-white rounded shadow-lg shadow-black px-3 py-8 gap-3 md:w-80
 }
