@@ -22,7 +22,7 @@ function LoginForm({ setUserSession, userSession }) {
 
     const response = await dispatch(login(data));
     if ('token' in response.payload) setUserSession(response.payload);
-    navigate('/');
+    navigate('/doctors-list');
   };
   return (
     <div className="form-container">
