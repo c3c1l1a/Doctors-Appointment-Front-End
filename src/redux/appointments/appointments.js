@@ -10,7 +10,7 @@ export const getAppointments = createAsyncThunk(
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: data.token,
+        Authorization: data,
       },
     });
     response.data = await response.json();
