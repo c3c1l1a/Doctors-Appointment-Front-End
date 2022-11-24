@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { newAppointment } from '../../redux/appointments/new-appointment';
 import './book-appointment.css';
@@ -10,6 +10,7 @@ function BookAppointment({ userSession }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [errors, setErrors] = useState({});
+  const loadedDoctors = useSelector((state) => state.doctors);
 
   useEffect(() => {
     if (!userSession.token && location.pathname === '/book-appointment') navigate('/login');
@@ -39,6 +40,8 @@ function BookAppointment({ userSession }) {
     validate(data);
     data.user_id = userSession.id;
     data.token = userSession.token;
+
+    console.log(data.doctor_id);
 
     if (Object.keys(errors).length === 0) {
       dispatch(newAppointment(data));
@@ -85,7 +88,7 @@ function BookAppointment({ userSession }) {
             <label htmlFor="doctors" className="doctors-dropdown">
               <select id="doctors" name="doctor_id" size="1" className="dropdown-input">
                 <option value="no-value">Doctor</option>
-                <option value="1">Dr Wendy</option>
+                {loadedDoctors.map((doctor) => (<option key={doctor.id} value={doctor.id}>{`Dr. ${doctor.name}`}</option>))}
               </select>
             </label>
           </div>

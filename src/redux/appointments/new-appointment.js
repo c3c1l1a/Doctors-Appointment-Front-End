@@ -7,7 +7,6 @@ export const newAppointment = createAsyncThunk(
   NEW_APPOINTMENT,
   async (formData) => {
     const { token, ...remainingFormData } = formData;
-    remainingFormData.doctor_id = 1;
 
     const response = await fetch('http://localhost:3001/api/v1/appointments', {
       method: 'POST',
