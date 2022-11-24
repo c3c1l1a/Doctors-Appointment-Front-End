@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .doctors-list {
-	@apply flex flex-col gap-4 p-3 md:justify-center
+	@apply flex flex-col gap-4 p-3 md:justify-center md:items-center
 }
 .doctors-list-container {
 	@apply flex flex-col md:flex-row gap-4 p-3  md:justify-center

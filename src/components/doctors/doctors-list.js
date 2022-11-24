@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import DoctorDetails from './doctor-details';
@@ -10,12 +11,18 @@ import './doctors-list.css';
 
 function DoctorsList({ userSession }) {
   const dispatch = useDispatch();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const [doctors, setDoctors] = useState([
     {
       id: -1,
       error: 'No doctors yet',
     }]);
+
+  useEffect(() => {
+    if (userSession.error && location.pathname === '/') navigate('/login');
+  }, [location]);
 
   const [doctorId, setDoctorId] = useState(-1);
 
