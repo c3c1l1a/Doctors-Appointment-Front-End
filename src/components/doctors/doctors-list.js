@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { getDoctors } from '../../redux/doctors/doctors';
 import facebook from '../../images/Facebook.svg';
@@ -9,6 +10,7 @@ import './doctors-list.css';
 
 function DoctorsList({ userSession }) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [doctors, setDoctors] = useState([
     {
@@ -22,6 +24,10 @@ function DoctorsList({ userSession }) {
       setDoctors(response.payload);
     })();
   }, []);
+
+  const getDoctorDetails = (doctorId) => {
+    navigate(`/doctors/${doctorId}`);
+  };
 
   return (
     <ul className="doctors-list">
@@ -38,6 +44,7 @@ function DoctorsList({ userSession }) {
           <div className="doctor-bio-container">
             <p className="doctor-bio">{doctor.bio}</p>
           </div>
+          <button className="doctor-more-details" type="button" onClick={() => getDoctorDetails(doctor.id)}>More details</button>
           <div className="doctor-social-media">
             <img src={facebook} alt="facebook icon" />
             <img src={twitter} alt="facebook icon" />

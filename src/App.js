@@ -9,6 +9,7 @@ import LoginForm from './components/auth/login-form';
 import SignupForm from './components/auth/signup-form';
 import Navigation from './components/nav/navigation';
 import Topbar from './components/topbar/topbar';
+import DoctorDetails from './components/doctors/doctors-details';
 
 import './App.css';
 
@@ -33,6 +34,7 @@ function App() {
         <Route exact path="/delete-doctor" element={<DeleteDoctor />} />
         <Route exact path="/login" element={<LoginForm setUserSession={setUserSession} userSession={userSession} />} />
         <Route exact path="/signup" element={<SignupForm userSession={userSession} />} />
+        <Route path="/doctors/:id" element={<DoctorDetails userSession={userSession} />} />
       </Routes>
     </div>
   );

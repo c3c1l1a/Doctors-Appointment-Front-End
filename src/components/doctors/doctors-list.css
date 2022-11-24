@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .doctors-list {
-	@apply flex flex-col gap-4 md:flex-row
+	@apply flex flex-col gap-4 md:flex-row 
 }
 
 .doctor-card {
-	@apply flex flex-col bg-white rounded shadow-lg shadow-black px-3 py-8 gap-3 md:w-80 hover:scale-95
+	@apply flex flex-col bg-white rounded shadow-lg shadow-black px-3 py-8 gap-3 md:w-80
 }
 
 .doctor-card  p {
@@ -46,3 +46,6 @@
 	@apply border-2 rounded-full w-10;
 }
 
+.doctor-card > .doctor-more-details {
+	@apply font-bold underline underline-offset-4 hover:scale-95 text-gray-500
+} 

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const ALL_DOCTORS = 'appointments/ALL_DOCTORS';
+const ALL_DOCTORS = 'doctors/ALL_DOCTORS';
 const initialState = [];
 
 export const getDoctors = createAsyncThunk(
@@ -19,12 +19,18 @@ export const getDoctors = createAsyncThunk(
 );
 
 const getDoctorsSlice = createSlice({
-  name: 'newAppointment',
+  name: 'doctors',
   initialState,
-  reducers: {},
+  reducers: {
+    getSingleDoctor: (state, action) => {
+      console.log(state[0], action);
+      return action.payload;
+    },
+  },
   extraReducers: {
-    [getDoctors.fulfilled]: () => ({ success: 'Successfully loaded all appointments' }),
+    [getDoctors.fulfilled]: (state, action) => action.payload,
   },
 });
 
+export const { getSingleDoctor } = getDoctorsSlice.actions;
 export default getDoctorsSlice.reducer;
