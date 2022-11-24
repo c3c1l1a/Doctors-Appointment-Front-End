@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { getDoctors } from '../../redux/doctors/doctors';
+import { useSelector } from 'react-redux';
 import DoctorDetails from './doctor-details';
 import facebook from '../../images/Facebook.svg';
 import twitter from '../../images/Twitter.svg';
 import linkedIn from '../../images/Linkedin.svg';
 import './doctors-list.css';
 
-function DoctorsList({ userSession }) {
-  const dispatch = useDispatch();
+function DoctorsList() {
+  const loadedDoctors = useSelector((state) => state.doctors);
 
   const [doctors, setDoctors] = useState([
     {
@@ -20,10 +18,7 @@ function DoctorsList({ userSession }) {
   const [doctorId, setDoctorId] = useState(-1);
 
   useEffect(() => {
-    (async () => {
-      const response = await dispatch(getDoctors(userSession.token));
-      setDoctors(response.payload);
-    })();
+    setDoctors(loadedDoctors);
   }, []);
 
   const getDoctorDetails = (id) => {
@@ -57,12 +52,5 @@ function DoctorsList({ userSession }) {
     </ul>
   );
 }
-
-DoctorsList.propTypes = {
-  userSession: PropTypes.objectOf(PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.string,
-  ])).isRequired,
-};
 
 export default DoctorsList;

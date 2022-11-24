@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import closeIcon from '../../images/close-icon.svg';
 import binIcon from '../../images/bin-icon.svg';
@@ -9,8 +10,9 @@ import danger from '../../images/danger.svg';
 import './doctor-details.css';
 
 function DoctorDetails({ doctorId, setDoctorId }) {
+  const navigate = useNavigate();
+
   const singleDoctor = useSelector((state) => {
-    console.log(doctorId);
     const doctor = state.doctors.filter((doctor) => doctor.id === Number(doctorId));
     return doctor[0];
   });
@@ -25,7 +27,7 @@ function DoctorDetails({ doctorId, setDoctorId }) {
   };
 
   const bookAppointment = () => {
-    console.log('Book Appointment');
+    navigate('/book-appointment');
   };
 
   if (!singleDoctor) return (<div />);
