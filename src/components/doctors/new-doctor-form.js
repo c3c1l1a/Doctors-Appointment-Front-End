@@ -53,19 +53,19 @@ function NewDoctorForm({ userSession }) {
   };
 
   return (
-    <div className="app">
+    <div className="add-doctor-form-container">
       <form className="add-doctor-form" onSubmit={(e) => onSubmit(e)}>
         <div>
           <p className="add-doctor-errors">{errors.name}</p>
-          <input className="" type="text" placeholder="Enter doctors name" name="name" />
+          <input className="form-input" type="text" placeholder="Enter doctors name" name="name" />
         </div>
         <div>
           <p className="add-doctor-errors">{errors.photo}</p>
-          <input className="" type="text" placeholder="Paste photo url" name="photo" />
+          <input className="form-input" type="text" placeholder="Paste photo url" name="photo" />
         </div>
         <div>
           <p className="add-doctor-errors">{errors.specialty}</p>
-          <input className="" type="text" placeholder="Specialty" name="specialty" />
+          <input className="form-input" type="text" placeholder="Specialty" name="specialty" />
         </div>
         <div>
           <p className="add-doctor-errors">{errors.bio}</p>
@@ -74,7 +74,7 @@ function NewDoctorForm({ userSession }) {
             wrap="physical"
             type="text"
             name="bio"
-            className=""
+            className="form-input"
             placeholder="Doctors bio"
           />
         </div>

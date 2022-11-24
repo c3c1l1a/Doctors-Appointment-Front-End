@@ -2,18 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-.add-doctor-form {
-	@apply flex flex-col gap-4
+.add-doctor-form-container {
+	@apply flex justify-center h-screen items-center
+}
+
+.add-doctor-form { 
+	@apply flex flex-col gap-4 md:w-1/2 
 }
 
 .add-doctor-form > div {
 	@apply flex flex-col relative pt-5
 }
 
+.add-doctor-form > .submit-button {
+    @apply bg-main p-3 font-bold;
+  }
+
 .add-doctor-errors {
 	@apply absolute -top-1 text-red-600
-}
-
-.add-doctor-form > .submit-button {
-	@apply border-2 text-white
 }
