@@ -11,7 +11,7 @@ function SignupForm({ userSession }) {
   const location = useLocation();
 
   useEffect(() => {
-    if (userSession.token && location.pathname === '/signup') navigate('/');
+    if (userSession.token && location.pathname === '/signup') navigate('/doctors-list');
   }, [location]);
 
   const onSubmit = (e) => {

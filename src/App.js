@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import AppointmentsList from './components/appointments/appointments-list';
 import BookAppointment from './components/appointments/book-appointment';
+import Splash from './components/splash/splash';
 import NewDoctorForm from './components/doctors/new-doctor-form';
 import DeleteDoctor from './components/doctors/delete-doctor';
 import DoctorsList from './components/doctors/doctors-list';
@@ -36,7 +37,8 @@ function App() {
         <Topbar userSession={userSession} setUserSession={setUserSession} />
       </div>
       <Routes>
-        <Route exact path="/" element={<DoctorsList userSession={userSession} />} />
+        <Route exact path="/" element={<Splash />} />
+        <Route exact path="/doctors-list" element={<DoctorsList userSession={userSession} />} />
         <Route exact path="/book-appointment" element={<BookAppointment userSession={userSession} />} />
         <Route exact path="/appointments" element={<AppointmentsList userSession={userSession} />} />
         <Route exact path="/add-new-doctor" element={<NewDoctorForm userSession={userSession} />} />
