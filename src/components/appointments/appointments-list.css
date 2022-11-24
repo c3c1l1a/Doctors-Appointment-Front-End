@@ -71,7 +71,7 @@
   }
 
   .appointment-doctor-pic {
-    @apply bg-gray-200 rounded-full;
+    @apply bg-gray-200 rounded-full border-4;
 
     width: 60px;
     height: 60px;

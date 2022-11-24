@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { getAppointments } from '../../redux/appointments/appointments';
@@ -12,6 +12,15 @@ import './appointments-list.css';
 function AppointmentsList({ userSession }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const doctors = useSelector((state) => {
+    const doctorStateMap = {};
+    state.doctors.map((item) => {
+      doctorStateMap[item.id] = item;
+      return item;
+    });
+    return doctorStateMap;
+  });
 
   const [appointments, setAppointments] = useState([
     {
@@ -70,10 +79,17 @@ function AppointmentsList({ userSession }) {
                 </div>
               </div>
               <div className="appointment-doctor">
-                <img src={mockDoctor(i).src} alt="doctor" className="appointment-doctor-pic" />
+                <img
+                  src={doctors[appointment.doctor_id].photo}
+                  alt="doctor"
+                  className="appointment-doctor-pic"
+                  style={{
+                    borderColor: mockDoctor(i % 5).color,
+                  }}
+                />
                 <div className="appointment-doctor-details">
                   <p className="appointment-doctor-name">{appointment.doctor_name}</p>
-                  <p className="appointment-doctor-speciality">Ophthamologist</p>
+                  <p className="appointment-doctor-speciality">{doctors[appointment.doctor_id].specialty}</p>
                   <p className="message">{appointment.message}</p>
                 </div>
               </div>
