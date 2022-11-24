@@ -12,7 +12,7 @@ function LoginForm({ setUserSession, userSession }) {
   const location = useLocation();
 
   useEffect(() => {
-    if (userSession.token && location.pathname === '/login') navigate('/');
+    if (userSession.token && location.pathname === '/login') navigate('/doctors-list');
   }, [location]);
 
   const onSubmit = async (e) => {
