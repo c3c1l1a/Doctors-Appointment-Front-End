@@ -15,7 +15,7 @@ This a ract application to to book a doctors appointment. It consumes [this endp
 > React, Redux
 
 ## Live Demo
-The project is hosted [here](https://jocular-faun-468a10.netlify.app) 
+The project is hosted [here](https://comfy-croissant-b8b027.netlify.app/login) 
 
 ## Getting Started
 
