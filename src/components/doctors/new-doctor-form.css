@@ -3,21 +3,17 @@
 @tailwind utilities;
 
 .add-doctor-form-container {
-	@apply flex justify-center h-screen items-center
-}
+  @apply flex justify-center h-screen items-center; }
 
-.add-doctor-form { 
-	@apply flex flex-col gap-4 md:w-1/2 
-}
+.add-doctor-form {
+  @apply flex flex-col gap-4 md:w-1/2; }
 
 .add-doctor-form > div {
-	@apply flex flex-col relative pt-5
-}
+  @apply flex flex-col relative pt-5; }
 
 .add-doctor-form > .submit-button {
-    @apply bg-main p-3 font-bold;
-  }
+  @apply bg-main p-3 font-bold;
+}
 
 .add-doctor-errors {
-	@apply absolute -top-1 text-red-600
-}
+  @apply absolute -top-1 text-red-600; }
