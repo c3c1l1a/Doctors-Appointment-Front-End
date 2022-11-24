@@ -6,7 +6,7 @@ const initialState = [];
 export const deleteAppointment = createAsyncThunk(
   REMOVE_APPOINTMENT,
   async (data) => {
-    await fetch(`http://localhost:3001/api/v1/appointments/${data.id}`, {
+    await fetch(`https://doctor-appointments-backend.herokuapp.com/api/v1/appointments/${data.id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

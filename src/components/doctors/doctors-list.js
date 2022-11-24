@@ -37,7 +37,8 @@ function DoctorsList({ userSession }) {
     setDoctorId(id);
   };
 
-  if (userSession.error) return (<div />);
+  console.log(doctors);
+  if (userSession.error && doctors.length <= 0) return (<div />);
 
   return (
     <ul className="doctors-list">

@@ -46,16 +46,16 @@ function Navigation({ userSession }) {
           <img src={logo} alt="logo" />
         </NavLink>
         <NavLink to="/" onClick={() => close()} className={(isActive) => `nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
-          Doctors
+          All Doctors
+        </NavLink>
+        <NavLink to="/add-new-doctor" onClick={() => close()} className={(isActive) => `${privatePage} nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
+          Add Doctor
         </NavLink>
         <NavLink to="/book-appointment" onClick={() => close()} className={(isActive) => `${privatePage} nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
           Book Appointment
         </NavLink>
         <NavLink to="/appointments" onClick={() => close()} className={(isActive) => `${privatePage} nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
           My Appointments
-        </NavLink>
-        <NavLink to="/add-new-doctor" onClick={() => close()} className={(isActive) => `${privatePage} nav-bar-item${isActive.isActive ? ' nav-item-current' : ''}`}>
-          Add Doctor
         </NavLink>
       </nav>
     </div>

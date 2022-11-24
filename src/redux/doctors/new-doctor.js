@@ -7,7 +7,7 @@ export const newDoctor = createAsyncThunk(
   NEW_DOCTOR,
   async (data) => {
     const { token, ...remainingData } = data;
-    const response = await fetch('http://localhost:3001/api/v1/doctors', {
+    const response = await fetch('https://doctor-appointments-backend.herokuapp.com/api/v1/doctors', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -6,7 +6,7 @@ const initialState = [];
 export const signup = createAsyncThunk(
   SIGNUP,
   async (formData) => {
-    const response = await fetch('http://localhost:3001/api/v1/users', {
+    const response = await fetch('https://doctor-appointments-backend.herokuapp.com/api/v1/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
