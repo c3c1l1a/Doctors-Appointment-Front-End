@@ -41,8 +41,6 @@ function BookAppointment({ userSession }) {
     data.user_id = userSession.id;
     data.token = userSession.token;
 
-    console.log(data.doctor_id);
-
     if (Object.keys(errors).length === 0) {
       dispatch(newAppointment(data));
       navigate('/appointments');

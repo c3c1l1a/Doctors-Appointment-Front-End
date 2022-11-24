@@ -37,7 +37,6 @@ function DoctorsList({ userSession }) {
     setDoctorId(id);
   };
 
-  console.log(doctors);
   if (userSession.error && doctors.length <= 0) return (<div />);
 
   return (

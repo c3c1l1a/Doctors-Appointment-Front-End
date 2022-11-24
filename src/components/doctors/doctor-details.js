@@ -19,7 +19,6 @@ function DoctorDetails({ doctorId, setDoctorId }) {
 
   const closeModal = () => {
     setDoctorId(-1);
-    console.log('Close modal');
   };
 
   const deleteDoctor = () => {
