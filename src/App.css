@@ -4,7 +4,7 @@
 
 @layer components {
   .app {
-    @apply flex w-full flex-col p-1 bg-main h-screen;
+    @apply flex w-full flex-col p-1 bg-main h-screen overflow-scroll;
   }
 
   .topbar-container {

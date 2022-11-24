@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { getDoctors } from '../../redux/doctors/doctors';
+import DoctorDetails from './doctor-details';
 import facebook from '../../images/Facebook.svg';
 import twitter from '../../images/Twitter.svg';
 import linkedIn from '../../images/Linkedin.svg';
@@ -10,13 +10,14 @@ import './doctors-list.css';
 
 function DoctorsList({ userSession }) {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const [doctors, setDoctors] = useState([
     {
       id: -1,
       error: 'No doctors yet',
     }]);
+
+  const [doctorId, setDoctorId] = useState(-1);
 
   useEffect(() => {
     (async () => {
@@ -25,8 +26,8 @@ function DoctorsList({ userSession }) {
     })();
   }, []);
 
-  const getDoctorDetails = (doctorId) => {
-    navigate(`/doctors/${doctorId}`);
+  const getDoctorDetails = (id) => {
+    setDoctorId(id);
   };
 
   return (
@@ -52,6 +53,7 @@ function DoctorsList({ userSession }) {
           </div>
         </li>
       ))}
+      <DoctorDetails doctorId={doctorId} setDoctorId={setDoctorId} />
     </ul>
   );
 }

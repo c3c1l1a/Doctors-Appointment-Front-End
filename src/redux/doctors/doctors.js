@@ -22,10 +22,7 @@ const getDoctorsSlice = createSlice({
   name: 'doctors',
   initialState,
   reducers: {
-    getSingleDoctor: (state, action) => {
-      console.log(state[0], action);
-      return action.payload;
-    },
+    getSingleDoctor: (state, action) => action.payload,
   },
   extraReducers: {
     [getDoctors.fulfilled]: (state, action) => action.payload,
