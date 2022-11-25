@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .app {
+    @apply flex w-full flex-col p-1 bg-main h-screen overflow-scroll;
+  }
+
+  .topbar-container {
+    @apply flex justify-between p-3 z-50;
+  }
+}
